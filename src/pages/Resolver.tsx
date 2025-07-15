@@ -33,9 +33,8 @@ const Resolver = () => {
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Almerico Angelo Sartori, 649",
-        "addressRegion": "São Francisco",
-        "addressLocality": "Toledo",
-        "addressRegion": "PR",
+        "addressLocality": "São Francisco",
+        "addressRegion": "Toledo-PR",
         "addressCountry": "BR"
       },
       "telephone": "+5545999187722",

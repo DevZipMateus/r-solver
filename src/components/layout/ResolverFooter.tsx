@@ -75,7 +75,7 @@ const ResolverFooter = () => {
             © {new Date().getFullYear()} Resolver - Soluções Elétricas Inteligentes. Todos os direitos reservados.
           </p>
           <p className="text-gray-500 text-xs mt-2">
-            CNPJ: XX.XXX.XXX/0001-XX | Toledo-PR
+            MEI: 56.219.926/0001-06 | Toledo-PR
           </p>
         </div>
       </div>
