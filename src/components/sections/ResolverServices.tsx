@@ -69,7 +69,7 @@ const ResolverServices = () => {
   ];
 
   return (
-    <section id="servicos" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
+    <section id="servicos" className="py-12 sm:py-16 lg:py-20" style={{ backgroundColor: '#021b47' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,10 +78,10 @@ const ResolverServices = () => {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
             Nossos <span className="text-orange-500">Serviços</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto px-4">
             Soluções elétricas completas e inteligentes para residências e empresas
           </p>
         </motion.div>
@@ -94,15 +94,15 @@ const ResolverServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
             >
               <service.icon className="h-8 w-8 sm:h-10 sm:w-10 text-orange-500 mb-3 sm:mb-4" />
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 leading-tight">{service.title}</h3>
-              <p className="text-gray-600 mb-3 sm:mb-4 text-sm leading-relaxed">{service.description}</p>
+              <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 leading-tight">{service.title}</h3>
+              <p className="text-gray-300 mb-3 sm:mb-4 text-sm leading-relaxed">{service.description}</p>
               
               <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
                 {service.features.map((feature, i) => (
-                  <li key={i} className="text-gray-500 text-xs sm:text-sm flex items-center">
+                  <li key={i} className="text-gray-400 text-xs sm:text-sm flex items-center">
                     <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 flex-shrink-0"></div>
                     {feature}
                   </li>

@@ -4,7 +4,7 @@ import { MapPin, Clock, Phone, Mail } from 'lucide-react';
 
 const ResolverLocation = () => {
   return (
-    <section id="localizacao" className="py-16 lg:py-20 bg-gray-50">
+    <section id="localizacao" className="py-16 lg:py-20" style={{ backgroundColor: '#021b47' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -13,10 +13,10 @@ const ResolverLocation = () => {
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             Nossa <span className="text-orange-500">Localização</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Visite-nos ou entre em contato para agendar uma visita técnica
           </p>
         </motion.div>
@@ -30,7 +30,7 @@ const ResolverLocation = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg">
+            <div className="w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg border border-white/20">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.123456789!2d-53.742839!3d-24.713889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzUwLjAiUyA1M8KwNDQnMzQuMiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
                 width="100%"
@@ -52,26 +52,26 @@ const ResolverLocation = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Informações de Contato</h3>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <h3 className="text-xl font-semibold text-white mb-4">Informações de Contato</h3>
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-orange-500 mt-1" />
                   <div>
-                    <h4 className="font-medium text-gray-900">Endereço</h4>
-                    <p className="text-gray-600">Rua Almerico Angelo Sartori, 649</p>
-                    <p className="text-gray-600">São Francisco, Toledo-PR</p>
+                    <h4 className="font-medium text-white">Endereço</h4>
+                    <p className="text-gray-300">Rua Almerico Angelo Sartori, 649</p>
+                    <p className="text-gray-300">São Francisco, Toledo-PR</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3">
                   <Phone className="h-5 w-5 text-orange-500 mt-1" />
                   <div>
-                    <h4 className="font-medium text-gray-900">Telefone</h4>
+                    <h4 className="font-medium text-white">Telefone</h4>
                     <a 
                       href="tel:+5545999187722" 
-                      className="text-orange-600 hover:text-orange-700"
+                      className="text-orange-400 hover:text-orange-300"
                     >
                       (45) 99918-7722
                     </a>
@@ -81,10 +81,10 @@ const ResolverLocation = () => {
                 <div className="flex items-start space-x-3">
                   <Mail className="h-5 w-5 text-orange-500 mt-1" />
                   <div>
-                    <h4 className="font-medium text-gray-900">Email</h4>
+                    <h4 className="font-medium text-white">Email</h4>
                     <a 
                       href="mailto:rsolver2023@gmail.com" 
-                      className="text-orange-600 hover:text-orange-700"
+                      className="text-orange-400 hover:text-orange-300"
                     >
                       rsolver2023@gmail.com
                     </a>
@@ -94,10 +94,10 @@ const ResolverLocation = () => {
                 <div className="flex items-start space-x-3">
                   <Clock className="h-5 w-5 text-orange-500 mt-1" />
                   <div>
-                    <h4 className="font-medium text-gray-900">Horário de Atendimento</h4>
-                    <p className="text-gray-600">Segunda a Sexta: 8h às 18h</p>
-                    <p className="text-gray-600">Sábado: 8h às 12h</p>
-                    <p className="text-gray-600">Emergências: 24h</p>
+                    <h4 className="font-medium text-white">Horário de Atendimento</h4>
+                    <p className="text-gray-300">Segunda a Sexta: 8h às 18h</p>
+                    <p className="text-gray-300">Sábado: 8h às 12h</p>
+                    <p className="text-gray-300">Emergências: 24h</p>
                   </div>
                 </div>
               </div>

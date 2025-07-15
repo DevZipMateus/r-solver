@@ -49,7 +49,7 @@ const ResolverTestimonials = () => {
   ];
 
   return (
-    <section id="depoimentos" className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section id="depoimentos" className="py-12 sm:py-16 lg:py-20" style={{ backgroundColor: '#021b47' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,10 +58,10 @@ const ResolverTestimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
             O que nossos <span className="text-orange-500">clientes</span> dizem
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto px-4">
             Depoimentos reais de clientes satisfeitos com nossos serviços
           </p>
         </motion.div>
@@ -74,7 +74,7 @@ const ResolverTestimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-orange-50 to-gray-50 rounded-xl p-4 sm:p-6 relative"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 relative border border-white/20"
             >
               <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-orange-300 mb-3 sm:mb-4" />
               
@@ -84,16 +84,16 @@ const ResolverTestimonials = () => {
                 ))}
               </div>
 
-              <p className="text-gray-700 mb-3 sm:mb-4 italic text-sm sm:text-base leading-relaxed">"{testimonial.text}"</p>
+              <p className="text-gray-300 mb-3 sm:mb-4 italic text-sm sm:text-base leading-relaxed">"{testimonial.text}"</p>
               
-              <div className="border-t border-orange-200 pt-3 sm:pt-4">
+              <div className="border-t border-white/20 pt-3 sm:pt-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.name}</h4>
-                    <p className="text-xs sm:text-sm text-gray-600">{testimonial.location}</p>
+                    <h4 className="font-semibold text-white text-sm sm:text-base">{testimonial.name}</h4>
+                    <p className="text-xs sm:text-sm text-gray-400">{testimonial.location}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs text-orange-600 font-medium">{testimonial.service}</p>
+                    <p className="text-xs text-orange-400 font-medium">{testimonial.service}</p>
                   </div>
                 </div>
               </div>
@@ -108,7 +108,7 @@ const ResolverTestimonials = () => {
           viewport={{ once: true }}
           className="text-center mt-8 sm:mt-12"
         >
-          <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
+          <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
             Quer fazer parte dos nossos clientes satisfeitos?
           </p>
           <button

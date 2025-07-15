@@ -11,7 +11,7 @@ const ResolverAbout = () => {
   ];
 
   return (
-    <section id="sobre" className="py-16 lg:py-20 bg-white">
+    <section id="sobre" className="py-16 lg:py-20" style={{ backgroundColor: '#021b47' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -20,10 +20,10 @@ const ResolverAbout = () => {
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
             Sobre a <span className="text-orange-500">Resolver</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Nossa história de crescimento e dedicação aos melhores serviços elétricos
           </p>
         </motion.div>
@@ -35,8 +35,8 @@ const ResolverAbout = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Nossa Jornada</h3>
-            <div className="space-y-4 text-gray-600">
+            <h3 className="text-2xl font-semibold text-white mb-6">Nossa Jornada</h3>
+            <div className="space-y-4 text-gray-300">
               <p>
                 A <strong className="text-orange-500">Resolver</strong> foi fundada em maio de 2023 com a ideia inicial de prestar pequenos serviços elétricos no período posterior ao expediente comercial. O que começou como um projeto para aumentar a renda, rapidamente se transformou em uma paixão pelo atendimento de qualidade.
               </p>
@@ -54,29 +54,29 @@ const ResolverAbout = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-orange-50 to-gray-50 p-8 rounded-2xl"
+            className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20"
           >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Nosso Diferencial</h3>
+            <h3 className="text-2xl font-semibold text-white mb-6">Nosso Diferencial</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
-                <span className="text-gray-600">Sistema de agendamento de horários</span>
+                <span className="text-gray-300">Sistema de agendamento de horários</span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
-                <span className="text-gray-600">Análise completa de projetos</span>
+                <span className="text-gray-300">Análise completa de projetos</span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
-                <span className="text-gray-600">Sistema interno para orçamentos e vendas</span>
+                <span className="text-gray-300">Sistema interno para orçamentos e vendas</span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
-                <span className="text-gray-600">Emissão de notas fiscais</span>
+                <span className="text-gray-300">Emissão de notas fiscais</span>
               </li>
               <li className="flex items-start space-x-3">
                 <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
-                <span className="text-gray-600">Múltiplas formas de pagamento</span>
+                <span className="text-gray-300">Múltiplas formas de pagamento</span>
               </li>
             </ul>
           </motion.div>
@@ -91,10 +91,10 @@ const ResolverAbout = () => {
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
         >
           {stats.map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-gradient-to-br from-orange-50 to-gray-50 rounded-xl">
+            <div key={index} className="text-center p-6 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
               <stat.icon className="h-8 w-8 text-orange-500 mx-auto mb-3" />
-              <div className="text-2xl lg:text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
+              <div className="text-2xl lg:text-3xl font-bold text-white mb-1">{stat.value}</div>
+              <div className="text-sm text-gray-300">{stat.label}</div>
             </div>
           ))}
         </motion.div>
