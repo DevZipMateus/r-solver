@@ -1,0 +1,141 @@
+
+import { motion } from 'framer-motion';
+import { 
+  Zap, 
+  Shield, 
+  Camera, 
+  Lightbulb, 
+  Wifi, 
+  ShoppingCart, 
+  AlertTriangle,
+  Monitor
+} from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
+const ResolverServices = () => {
+  const handleWhatsAppClick = (service: string) => {
+    window.open(`https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20${service}.`, '_blank');
+  };
+
+  const services = [
+    {
+      icon: Zap,
+      title: 'Instalação Elétrica Residencial e Predial',
+      description: 'Instalações elétricas completas em casas, apartamentos e empresas de acordo com projeto técnico',
+      features: ['Projeto elétrico', 'Instalação conforme normas', 'Certificação e garantia']
+    },
+    {
+      icon: Lightbulb,
+      title: 'Instalação de Iluminação LED',
+      description: 'Modernização do seu sistema de iluminação com tecnologia LED eficiente',
+      features: ['Economia de energia', 'Maior durabilidade', 'Iluminação personalizada']
+    },
+    {
+      icon: AlertTriangle,
+      title: 'Instalação de Alarmes',
+      description: 'Sistemas de alarme residencial e comercial para máxima segurança',
+      features: ['Sensores de movimento', 'Central de monitoramento', 'App móvel']
+    },
+    {
+      icon: Camera,
+      title: 'Instalação de Câmeras',
+      description: 'Sistemas de CFTV com câmeras de alta resolução e monitoramento remoto',
+      features: ['Câmeras HD/4K', 'Visão noturna', 'Acesso remoto']
+    },
+    {
+      icon: Wifi,
+      title: 'Instalação de Rede',
+      description: 'Cabeamento estruturado e redes de dados para residências e empresas',
+      features: ['Cabeamento Cat6', 'Pontos de rede', 'WiFi profissional']
+    },
+    {
+      icon: ShoppingCart,
+      title: 'Venda de Materiais Elétricos',
+      description: 'Fornecimento de materiais elétricos de qualidade com preços competitivos',
+      features: ['Marcas reconhecidas', 'Garantia de fábrica', 'Entrega rápida']
+    },
+    {
+      icon: Shield,
+      title: 'Venda de Alarmes',
+      description: 'Comercialização de sistemas de alarme com instalação incluída',
+      features: ['Equipamentos modernos', 'Configuração personalizada', 'Suporte técnico']
+    },
+    {
+      icon: Monitor,
+      title: 'Sistemas de CFTV Completos',
+      description: 'Venda e instalação de centrais e sistemas completos de CFTV',
+      features: ['Centrais profissionais', 'Armazenamento local/nuvem', 'Integração total']
+    }
+  ];
+
+  return (
+    <section id="servicos" className="py-16 lg:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-12 lg:mb-16"
+        >
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Nossos <span className="text-orange-500">Serviços</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Soluções elétricas completas e inteligentes para residências e empresas
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            >
+              <service.icon className="h-10 w-10 text-orange-500 mb-4" />
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">{service.title}</h3>
+              <p className="text-gray-600 mb-4 text-sm">{service.description}</p>
+              
+              <ul className="space-y-2 mb-6">
+                {service.features.map((feature, i) => (
+                  <li key={i} className="text-gray-500 text-sm flex items-center">
+                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                onClick={() => handleWhatsAppClick(service.title)}
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white text-sm"
+              >
+                Solicitar Orçamento
+              </Button>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <Button
+            onClick={() => handleWhatsAppClick('todos os serviços')}
+            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg"
+          >
+            Fale Conosco pelo WhatsApp
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default ResolverServices;
