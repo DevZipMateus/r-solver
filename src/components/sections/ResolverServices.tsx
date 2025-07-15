@@ -94,24 +94,26 @@ const ResolverServices = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
+              className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
             >
-              <service.icon className="h-8 w-8 sm:h-10 sm:w-10 text-orange-500 mb-3 sm:mb-4" />
-              <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 leading-tight">{service.title}</h3>
-              <p className="text-gray-300 mb-3 sm:mb-4 text-sm leading-relaxed">{service.description}</p>
-              
-              <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
-                {service.features.map((feature, i) => (
-                  <li key={i} className="text-gray-400 text-xs sm:text-sm flex items-center">
-                    <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 flex-shrink-0"></div>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <div className="flex-grow">
+                <service.icon className="h-8 w-8 sm:h-10 sm:w-10 text-orange-500 mb-3 sm:mb-4" />
+                <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 leading-tight">{service.title}</h3>
+                <p className="text-gray-300 mb-3 sm:mb-4 text-sm leading-relaxed">{service.description}</p>
+                
+                <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="text-gray-400 text-xs sm:text-sm flex items-center">
+                      <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-2 flex-shrink-0"></div>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               <Button
                 onClick={() => handleWhatsAppClick(service.title)}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs sm:text-sm py-2 sm:py-3"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xs sm:text-sm py-2 sm:py-3 mt-auto"
               >
                 Solicitar Orçamento
               </Button>
