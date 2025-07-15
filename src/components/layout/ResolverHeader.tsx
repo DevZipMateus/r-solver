@@ -37,11 +37,20 @@ const ResolverHeader = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/661a5537-04e5-47cc-8fff-c12fad4d94f2.png" 
-              alt="Resolver - Soluções Elétricas Inteligentes" 
-              className="h-10 lg:h-12 w-auto"
-            />
+            <div className={`relative transition-all duration-300 ${
+              !isScrolled ? 'bg-white/15 backdrop-blur-sm rounded-lg p-2 shadow-lg border border-white/20' : ''
+            }`}>
+              <img 
+                src="/lovable-uploads/661a5537-04e5-47cc-8fff-c12fad4d94f2.png" 
+                alt="Resolver - Soluções Elétricas Inteligentes" 
+                className={`w-auto transition-all duration-300 ${
+                  isScrolled ? 'h-10 lg:h-12' : 'h-12 lg:h-14'
+                } drop-shadow-lg`}
+              />
+              {!isScrolled && (
+                <div className="absolute inset-0 bg-gradient-to-r from-orange-400/20 to-orange-600/20 rounded-lg blur-sm -z-10"></div>
+              )}
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -51,7 +60,7 @@ const ResolverHeader = () => {
                 key={item.name}
                 href={item.href}
                 className={`font-medium transition-colors hover:text-orange-500 ${
-                  isScrolled ? 'text-gray-900' : 'text-white'
+                  isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'
                 }`}
               >
                 {item.name}
@@ -68,9 +77,9 @@ const ResolverHeader = () => {
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className={`h-6 w-6 ${isScrolled ? 'text-gray-900' : 'text-white'}`} />
+              <X className={`h-6 w-6 ${isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'}`} />
             ) : (
-              <Menu className={`h-6 w-6 ${isScrolled ? 'text-gray-900' : 'text-white'}`} />
+              <Menu className={`h-6 w-6 ${isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'}`} />
             )}
           </Button>
         </div>
