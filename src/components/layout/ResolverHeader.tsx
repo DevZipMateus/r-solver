@@ -38,7 +38,7 @@ const ResolverHeader = () => {
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/ce7bfa4b-2cf4-4b26-85c5-6cc48b2270b7.png" 
+              src="/lovable-uploads/661a5537-04e5-47cc-8fff-c12fad4d94f2.png" 
               alt="Resolver - Soluções Elétricas Inteligentes" 
               className="h-10 lg:h-12 w-auto"
             />
