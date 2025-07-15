@@ -1,141 +1,206 @@
 
 import { motion } from 'framer-motion';
-import { Zap, Shield, Lightbulb, Phone } from 'lucide-react';
+import { Phone, MessageCircle, Star, Zap, Shield, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { usePerformance } from '@/hooks/usePerformance';
-import { useEffect, useRef } from 'react';
 
 const ResolverHero = () => {
-  const { reduceAnimations } = usePerformance();
-  const vantaRef = useRef<HTMLElement>(null);
-  const vantaEffect = useRef<any>(null);
-  
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Resolver.', '_blank');
+    window.open('https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.', '_blank');
   };
 
-  useEffect(() => {
-    if (!reduceAnimations && vantaRef.current && (window as any).VANTA) {
-      vantaEffect.current = (window as any).VANTA.NET({
-        el: vantaRef.current,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0xFF6B35,
-        backgroundColor: 0x0F0F0F,
-        points: 7.00,
-        maxDistance: 23.00,
-        spacing: 18.00
-      });
-    }
-
-    return () => {
-      if (vantaEffect.current) {
-        vantaEffect.current.destroy();
-      }
-    };
-  }, [reduceAnimations]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: reduceAnimations ? 0 : 0.05,
-        delayChildren: reduceAnimations ? 0 : 0.1
-      }
-    }
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:+5545999187722';
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: reduceAnimations ? 0 : 0.4 }
-    }
-  };
+  const features = [
+    { icon: Zap, text: 'Instalações Elétricas' },
+    { icon: Shield, text: 'Segurança e CFTV' },
+    { icon: Award, text: 'Qualidade Garantida' }
+  ];
 
   return (
     <section 
-      id="inicio"
-      ref={vantaRef} 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 pt-0" 
-      style={{ backgroundColor: '#0F0F0F' }}
+      id="inicio" 
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-orange-500 to-yellow-500"
     >
-      <motion.div 
-        className="relative z-10 w-full max-w-7xl mx-auto text-center"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <motion.div className="mb-4 sm:mb-6 md:mb-8" variants={itemVariants}>
-          <div className="inline-flex items-center space-x-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-orange-400/30 bg-orange-400/10 mb-4 sm:mb-6">
-            <Zap className="h-3 w-3 sm:h-4 sm:w-4 text-orange-400" />
-            <span className="text-orange-400 text-xs sm:text-sm font-medium">Soluções Elétricas Inteligentes</span>
-          </div>
-        </motion.div>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] animate-pulse"></div>
+      </div>
 
-        <motion.h1 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-3 sm:mb-4 md:mb-6 leading-tight" 
-          variants={itemVariants}
-        >
-          <span className="text-orange-400">Resolver</span><br className="hidden sm:block" />
-          <span className="sm:hidden"> </span>Conecta <span className="text-gray-300">Inteligência</span>
-        </motion.h1>
+      {/* Floating Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{ 
+            y: [-20, 20, -20],
+            rotate: [0, 10, -10, 0]
+          }}
+          transition={{ 
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/4 left-1/4 w-8 h-8 sm:w-12 sm:h-12 bg-white/20 rounded-full blur-sm"
+        />
+        <motion.div
+          animate={{ 
+            y: [20, -20, 20],
+            rotate: [0, -10, 10, 0]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-1/3 right-1/4 w-6 h-6 sm:w-10 sm:h-10 bg-white/15 rounded-full blur-sm"
+        />
+        <motion.div
+          animate={{ 
+            y: [-15, 15, -15],
+            x: [-10, 10, -10]
+          }}
+          transition={{ 
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-1/3 left-1/3 w-4 h-4 sm:w-8 sm:h-8 bg-white/25 rounded-full blur-sm"
+        />
+      </div>
 
-        <motion.p 
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto mb-4 sm:mb-6 md:mb-8 bg-black/30 rounded-lg p-3 sm:p-4 backdrop-blur-sm"
-          variants={itemVariants}
-        >
-          Especialistas em <strong>instalações elétricas</strong>, <strong>sistemas de segurança</strong> e <strong>automação residencial</strong> em Toledo-PR desde 2023
-        </motion.p>
-
-        <motion.div 
-          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 md:mb-12" 
-          variants={itemVariants}
-        >
-          <Button 
-            onClick={handleWhatsAppClick} 
-            className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-lg transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl hover:scale-105"
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
           >
-            <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-            <span className="text-sm sm:text-base md:text-lg">Solicite seu Orçamento</span>
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-black px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-sm sm:text-base md:text-lg font-semibold rounded-lg transition-all duration-300" 
-            onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Conheça Nossos Serviços
-          </Button>
-        </motion.div>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 text-xs sm:text-sm font-medium text-orange-800 bg-orange-100 rounded-full"
+            >
+              <Star className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
+              Soluções Elétricas Inteligentes
+            </motion.div>
 
-        <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-6 max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl mx-auto" 
-          variants={itemVariants}
-        >
-          {[
-            { icon: Zap, title: 'Elétrica', desc: 'Instalações completas' },
-            { icon: Shield, title: 'Segurança', desc: 'CFTV e alarmes' },
-            { icon: Lightbulb, title: 'LED', desc: 'Iluminação eficiente' },
-            { icon: Phone, title: 'Suporte', desc: 'Atendimento ágil' }
-          ].map((item, index) => {
-            const IconComponent = item.icon;
-            return (
-              <div key={index} className="text-center p-2 sm:p-3 md:p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10">
-                <IconComponent className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 text-orange-400 mx-auto mb-1 sm:mb-2" />
-                <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base">{item.title}</h3>
-                <p className="text-gray-400 text-xs sm:text-sm hidden sm:block">{item.desc}</p>
+            {/* Main Title */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+            >
+              Transforme Sua Casa em um 
+              <span className="block text-yellow-200">Ambiente Inteligente</span>
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-base sm:text-lg lg:text-xl text-orange-100 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+            >
+              Especialistas em instalações elétricas, sistemas de segurança, CFTV, 
+              alarmes e automação residencial em Toledo-PR.
+            </motion.p>
+
+            {/* Features */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-6 mb-6 sm:mb-8"
+            >
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center text-white/90">
+                  <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-200" />
+                  <span className="text-sm sm:text-base font-medium">{feature.text}</span>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center lg:justify-start"
+            >
+              <Button
+                onClick={handleWhatsAppClick}
+                className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
+              >
+                <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                Solicitar Orçamento
+              </Button>
+              
+              <Button
+                onClick={handlePhoneClick}
+                variant="outline"
+                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-orange-600 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg transition-all duration-300 hover:scale-105"
+              >
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                (45) 99918-7722
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Image/Visual */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative lg:block hidden"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/30 to-orange-400/30 rounded-3xl blur-2xl"></div>
+              <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-6 lg:p-8 border border-white/20 shadow-2xl">
+                <div className="grid grid-cols-2 gap-4 lg:gap-6">
+                  <div className="bg-white/20 rounded-2xl p-4 lg:p-6 text-center">
+                    <Zap className="w-8 h-8 lg:w-12 lg:h-12 text-yellow-200 mx-auto mb-3" />
+                    <h3 className="text-white font-semibold text-sm lg:text-base">Elétrica</h3>
+                    <p className="text-white/80 text-xs lg:text-sm">Instalações</p>
+                  </div>
+                  <div className="bg-white/20 rounded-2xl p-4 lg:p-6 text-center">
+                    <Shield className="w-8 h-8 lg:w-12 lg:h-12 text-yellow-200 mx-auto mb-3" />
+                    <h3 className="text-white font-semibold text-sm lg:text-base">Segurança</h3>
+                    <p className="text-white/80 text-xs lg:text-sm">CFTV & Alarmes</p>
+                  </div>
+                  <div className="bg-white/20 rounded-2xl p-4 lg:p-6 text-center">
+                    <Award className="w-8 h-8 lg:w-12 lg:h-12 text-yellow-200 mx-auto mb-3" />
+                    <h3 className="text-white font-semibold text-sm lg:text-base">Qualidade</h3>
+                    <p className="text-white/80 text-xs lg:text-sm">Garantida</p>
+                  </div>
+                  <div className="bg-white/20 rounded-2xl p-4 lg:p-6 text-center">
+                    <Star className="w-8 h-8 lg:w-12 lg:h-12 text-yellow-200 mx-auto mb-3" />
+                    <h3 className="text-white font-semibold text-sm lg:text-base">Confiança</h3>
+                    <p className="text-white/80 text-xs lg:text-sm">5 Estrelas</p>
+                  </div>
+                </div>
               </div>
-            );
-          })}
-        </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-1 h-8 sm:h-12 bg-white/60 rounded-full"
+        />
       </motion.div>
     </section>
   );

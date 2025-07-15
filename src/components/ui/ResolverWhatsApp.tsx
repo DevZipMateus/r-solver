@@ -1,52 +1,39 @@
 
-import { useEffect, useState } from 'react';
 import { MessageCircle } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 const ResolverWhatsApp = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsVisible(window.scrollY > 300);
-    };
-
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    const animationInterval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => setIsAnimating(false), 1000);
-    }, 5000);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearInterval(animationInterval);
-    };
-  }, []);
-
-  const handleClick = () => {
-    window.open('https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20Resolver.', '_blank');
+  const handleWhatsAppClick = () => {
+    window.open('https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.', '_blank');
   };
 
   return (
-    <button
-      onClick={handleClick}
-      className={cn(
-        'fixed bottom-6 right-6 z-40 flex items-center justify-center w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl transition-all duration-300 hover:scale-110',
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0',
-        isAnimating ? 'animate-bounce' : ''
-      )}
-      aria-label="Contato via WhatsApp"
+    <motion.div
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5, delay: 1 }}
+      className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50"
     >
-      <MessageCircle className="h-8 w-8 text-white" />
-      <span className="absolute top-0 right-0 flex h-3 w-3">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300 opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-300"></span>
-      </span>
-    </button>
+      <motion.button
+        onClick={handleWhatsAppClick}
+        className="bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 group relative"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+        aria-label="Contato via WhatsApp"
+      >
+        {/* Pulse ring */}
+        <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20"></div>
+        
+        {/* Icon */}
+        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6 relative z-10" />
+        
+        {/* Tooltip */}
+        <div className="absolute right-full mr-2 sm:mr-3 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white px-2 sm:px-3 py-1 sm:py-2 rounded-lg text-xs sm:text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+          Fale conosco!
+          <div className="absolute left-full top-1/2 transform -translate-y-1/2 border-4 border-transparent border-l-gray-900"></div>
+        </div>
+      </motion.button>
+    </motion.div>
   );
 };
 

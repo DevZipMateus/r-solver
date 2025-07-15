@@ -49,24 +49,24 @@ const ResolverTestimonials = () => {
   ];
 
   return (
-    <section id="depoimentos" className="py-16 lg:py-20 bg-white">
+    <section id="depoimentos" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 lg:mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
             O que nossos <span className="text-orange-500">clientes</span> dizem
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Depoimentos reais de clientes satisfeitos com nossos serviços
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -74,23 +74,23 @@ const ResolverTestimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-orange-50 to-gray-50 rounded-xl p-6 relative"
+              className="bg-gradient-to-br from-orange-50 to-gray-50 rounded-xl p-4 sm:p-6 relative"
             >
-              <Quote className="h-8 w-8 text-orange-300 mb-4" />
+              <Quote className="h-6 w-6 sm:h-8 sm:w-8 text-orange-300 mb-3 sm:mb-4" />
               
-              <div className="flex mb-4">
+              <div className="flex mb-3 sm:mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-orange-400 fill-current" />
+                  <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-orange-400 fill-current" />
                 ))}
               </div>
 
-              <p className="text-gray-700 mb-4 italic">"{testimonial.text}"</p>
+              <p className="text-gray-700 mb-3 sm:mb-4 italic text-sm sm:text-base leading-relaxed">"{testimonial.text}"</p>
               
-              <div className="border-t border-orange-200 pt-4">
+              <div className="border-t border-orange-200 pt-3 sm:pt-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.location}</p>
+                    <h4 className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.name}</h4>
+                    <p className="text-xs sm:text-sm text-gray-600">{testimonial.location}</p>
                   </div>
                   <div className="text-right">
                     <p className="text-xs text-orange-600 font-medium">{testimonial.service}</p>
@@ -106,14 +106,14 @@ const ResolverTestimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-8 sm:mt-12"
         >
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
             Quer fazer parte dos nossos clientes satisfeitos?
           </p>
           <button
             onClick={() => window.open('https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.', '_blank')}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-sm sm:text-base"
           >
             Solicite Seu Orçamento
           </button>
