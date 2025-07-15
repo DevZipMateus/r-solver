@@ -1,9 +1,12 @@
-
 import { motion } from 'framer-motion';
 import { Phone, MessageCircle, Star, Zap, Shield, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useEffect, useRef } from 'react';
 
 const ResolverHero = () => {
+  const vantaRef = useRef<HTMLElement>(null);
+  const vantaEffect = useRef<any>(null);
+
   const handleWhatsAppClick = () => {
     window.open('https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.', '_blank');
   };
@@ -11,6 +14,32 @@ const ResolverHero = () => {
   const handlePhoneClick = () => {
     window.location.href = 'tel:+5545999187722';
   };
+
+  useEffect(() => {
+    if (vantaRef.current && (window as any).VANTA) {
+      vantaEffect.current = (window as any).VANTA.NET({
+        el: vantaRef.current,
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xfbbf24, // Yellow-400 for network lines
+        backgroundColor: 0xea580c, // Orange-600 base
+        points: 6.00,
+        maxDistance: 25.00,
+        spacing: 16.00
+      });
+    }
+
+    return () => {
+      if (vantaEffect.current) {
+        vantaEffect.current.destroy();
+      }
+    };
+  }, []);
 
   const features = [
     { icon: Zap, text: 'Instalações Elétricas' },
@@ -20,15 +49,12 @@ const ResolverHero = () => {
 
   return (
     <section 
+      ref={vantaRef}
       id="inicio" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-orange-600 via-orange-500 to-yellow-500"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: '#ea580c' }}
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] animate-pulse"></div>
-      </div>
-
-      {/* Floating Elements */}
+      {/* Floating Elements - keeping as complement to Vanta effect */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           animate={{ 
