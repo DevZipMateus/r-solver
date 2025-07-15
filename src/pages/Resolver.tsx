@@ -6,6 +6,7 @@ import ResolverFooter from '@/components/layout/ResolverFooter';
 import ResolverHero from '@/components/sections/ResolverHero';
 import ResolverAbout from '@/components/sections/ResolverAbout';
 import ResolverServices from '@/components/sections/ResolverServices';
+import ResolverInstagram from '@/components/sections/ResolverInstagram';
 import ResolverTestimonials from '@/components/sections/ResolverTestimonials';
 import ResolverLocation from '@/components/sections/ResolverLocation';
 import ResolverContact from '@/components/sections/ResolverContact';
@@ -89,6 +90,7 @@ const Resolver = () => {
         <ResolverHero />
         <ResolverAbout />
         <ResolverServices />
+        <ResolverInstagram />
         <ResolverTestimonials />
         <ResolverLocation />
         <ResolverContact />
