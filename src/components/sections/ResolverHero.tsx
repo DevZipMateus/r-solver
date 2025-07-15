@@ -26,8 +26,8 @@ const ResolverHero = () => {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        color: 0xfbbf24, // Yellow-400 for network lines
-        backgroundColor: 0xea580c, // Orange-600 base
+        color: 0xea580c, // Orange-600 for network lines
+        backgroundColor: 0x000000, // Black background
         points: 6.00,
         maxDistance: 25.00,
         spacing: 16.00
@@ -52,7 +52,7 @@ const ResolverHero = () => {
       ref={vantaRef}
       id="inicio" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: '#ea580c' }}
+      style={{ backgroundColor: '#000000' }}
     >
       {/* Floating Elements - keeping as complement to Vanta effect */}
       <div className="absolute inset-0 pointer-events-none">
