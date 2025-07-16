@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { Eye, Download } from 'lucide-react';
+import { Eye } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import {
   Carousel,
@@ -116,18 +116,6 @@ const ResolverGallery = () => {
                           <Eye className="h-8 w-8 text-white mx-auto mb-2" />
                           <span className="text-white font-semibold text-sm">Ver Imagem</span>
                         </div>
-                      </div>
-
-                      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            window.open(image, '_blank');
-                          }}
-                          className="p-2 bg-green-500 hover:bg-green-600 text-white rounded-full transition-colors duration-300"
-                        >
-                          <Download className="h-4 w-4" />
-                        </button>
                       </div>
 
                       <div className="absolute bottom-2 left-2 right-2">
