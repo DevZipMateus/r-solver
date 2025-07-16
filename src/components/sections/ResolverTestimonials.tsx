@@ -5,46 +5,46 @@ import { Star, Quote } from 'lucide-react';
 const ResolverTestimonials = () => {
   const testimonials = [
     {
-      name: 'João Silva',
+      name: 'Felipe Papini',
       location: 'Toledo-PR',
-      text: 'Excelente atendimento! A equipe da Resolver instalou todo o sistema elétrico da minha casa nova. Trabalho impecável e dentro do prazo.',
+      text: 'Tive uma excelente experiência com a empresa. Desde o primeiro contato, fui muito bem atendido, com agilidade, clareza e profissionalismo. A equipe demonstrou conhecimento e compromisso em todas as etapas.',
       rating: 5,
-      service: 'Instalação Elétrica Residencial'
+      service: 'Atendimento Completo'
     },
     {
-      name: 'Maria Santos',
-      location: 'São Francisco, Toledo-PR',
-      text: 'Muito satisfeita com o sistema de câmeras que instalaram. Agora me sinto muito mais segura em casa. Recomendo!',
-      rating: 5,
-      service: 'Sistema de CFTV'
-    },
-    {
-      name: 'Pedro Oliveira',
-      location: 'Centro, Toledo-PR',
-      text: 'Profissionalismo exemplar! Instalaram toda a iluminação LED da nossa empresa e o resultado ficou incrível. Economia garantida!',
-      rating: 5,
-      service: 'Iluminação LED'
-    },
-    {
-      name: 'Ana Costa',
+      name: 'Sabrina Santana',
       location: 'Toledo-PR',
-      text: 'O sistema de alarme que instalaram é perfeito. Interface simples e eficiente. Atendimento nota 10 desde o orçamento até a entrega.',
+      text: 'Profissional pontual, educado, organizado e muito competente. Explicou cada etapa do trabalho com clareza e realizou tudo com muita segurança e capricho, ao final, deixou tudo limpinho. Recomendo com certeza!',
       rating: 5,
-      service: 'Sistema de Alarme'
+      service: 'Serviço Elétrico'
     },
     {
-      name: 'Carlos Ferreira',
-      location: 'Vila Industrial, Toledo-PR',
-      text: 'Precisei de uma instalação elétrica complexa na minha oficina. A Resolver resolveu tudo com muita competência e agilidade.',
+      name: 'Vera Mascarello',
+      location: 'Toledo-PR',
+      text: 'Profissional bem preparado, pontual, honesto e rápido. Serviço garantido, super indico!',
       rating: 5,
-      service: 'Instalação Elétrica Predial'
+      service: 'Instalação Elétrica'
     },
     {
-      name: 'Luciana Rodrigues',
-      location: 'Jardim Coopagro, Toledo-PR',
-      text: 'Modernizaram toda a parte elétrica do meu apartamento. Equipe pontual, educada e muito profissional. Super recomendo!',
+      name: 'Ivan Rotta',
+      location: 'Toledo-PR',
+      text: 'Pessoa de extrema confiança, agilidade no trabalho, com muita qualidade, capricho e eficiência!!',
       rating: 5,
-      service: 'Modernização Elétrica'
+      service: 'Manutenção Elétrica'
+    },
+    {
+      name: 'Elizandra Carla Silva',
+      location: 'Toledo-PR',
+      text: 'Um ótimo profissional, serviço capricho, tanto para residencial como para o comércio e indústria',
+      rating: 5,
+      service: 'Elétrica Predial'
+    },
+    {
+      name: 'Danielly Correa',
+      location: 'Toledo-PR',
+      text: 'Fui muito bem atendida desde o primeiro contato, a equipe é atenciosa e demonstra conhecimento e agilidade!',
+      rating: 5,
+      service: 'Atendimento Técnico'
     }
   ];
 
