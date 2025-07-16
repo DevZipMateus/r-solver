@@ -8,6 +8,7 @@ import ResolverAbout from '@/components/sections/ResolverAbout';
 import ResolverServices from '@/components/sections/ResolverServices';
 import ResolverInstagram from '@/components/sections/ResolverInstagram';
 import ResolverTestimonials from '@/components/sections/ResolverTestimonials';
+import ResolverGallery from '@/components/sections/ResolverGallery';
 import ResolverLocation from '@/components/sections/ResolverLocation';
 import ResolverContact from '@/components/sections/ResolverContact';
 import ResolverWhatsApp from '@/components/ui/ResolverWhatsApp';
@@ -92,6 +93,7 @@ const Resolver = () => {
         <ResolverServices />
         <ResolverInstagram />
         <ResolverTestimonials />
+        <ResolverGallery />
         <ResolverLocation />
         <ResolverContact />
       </main>
