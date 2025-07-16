@@ -73,7 +73,7 @@ const ResolverGallery = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Nossa <span className="text-green-400">Galeria</span>
+            Nossa <span className="text-orange-400">Galeria</span>
           </h2>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             Confira alguns dos nossos trabalhos recentes em instalações elétricas, 
@@ -141,7 +141,7 @@ const ResolverGallery = () => {
                 key={index}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   Math.floor(current / 3) === index 
-                    ? 'bg-green-400 w-6' 
+                    ? 'bg-orange-400 w-6' 
                     : 'bg-white/30 hover:bg-white/50'
                 }`}
                 onClick={() => api?.scrollTo(index * 3)}
@@ -162,7 +162,7 @@ const ResolverGallery = () => {
           </p>
           <button
             onClick={() => window.open('https://wa.me/5545999187722?text=Olá!%20Vi%20a%20galeria%20de%20projetos%20e%20gostaria%20de%20solicitar%20um%20orçamento.', '_blank')}
-            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-green-500/25"
+            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-orange-500/25"
           >
             Solicitar Orçamento
           </button>
