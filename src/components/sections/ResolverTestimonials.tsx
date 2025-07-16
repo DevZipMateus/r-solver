@@ -1,6 +1,5 @@
-
 import { motion } from 'framer-motion';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ExternalLink } from 'lucide-react';
 
 const ResolverTestimonials = () => {
   const testimonials = [
@@ -106,17 +105,27 @@ const ResolverTestimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mt-8 sm:mt-12"
+          className="text-center mt-8 sm:mt-12 space-y-4"
         >
-          <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
-            Quer fazer parte dos nossos clientes satisfeitos?
-          </p>
           <button
-            onClick={() => window.open('https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.', '_blank')}
-            className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+            onClick={() => window.open('https://www.google.com/maps/place//data=!4m3!3m2!1s0x4a72544e44400c37:0xbe3e5cf6b164cfaa!12e1?source=g.page.m._&laa=merchant-review-solicitation', '_blank')}
+            className="bg-white/10 hover:bg-white/20 text-white border border-white/30 hover:border-white/50 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-sm sm:text-base inline-flex items-center gap-2 mb-4"
           >
-            Solicite Seu Orçamento
+            Veja mais depoimentos aqui
+            <ExternalLink className="h-4 w-4" />
           </button>
+          
+          <div>
+            <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
+              Quer fazer parte dos nossos clientes satisfeitos?
+            </p>
+            <button
+              onClick={() => window.open('https://wa.me/5545999187722?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento.', '_blank')}
+              className="bg-orange-500 hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 text-sm sm:text-base"
+            >
+              Solicite Seu Orçamento
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>
