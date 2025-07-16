@@ -1,8 +1,20 @@
 
 import { motion } from 'framer-motion';
 import { Eye, Download } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 const ResolverGallery = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
   const galleryImages = [
     '/lovable-uploads/F818661FF8CFE30165DF34A7648C321F.jpeg',
     '/lovable-uploads/F086900BFCEBC12F7618CB5F0DAB7E61.jpeg',
@@ -22,6 +34,29 @@ const ResolverGallery = () => {
     '/lovable-uploads/0AD0EC5AA382C80DE34BC98B0ED0E96B.jpeg',
     '/lovable-uploads/019447C4AAF9369CCA2972A86B66BC66.jpeg'
   ];
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    // Auto-advance carousel every 3 seconds
+    const timer = setInterval(() => {
+      api.scrollNext();
+    }, 3000);
+
+    // Update current index when carousel changes
+    const onSelect = () => {
+      setCurrent(api.selectedScrollSnap());
+    };
+
+    api.on("select", onSelect);
+
+    return () => {
+      clearInterval(timer);
+      api.off("select", onSelect);
+    };
+  }, [api]);
 
   const handleImageClick = (imageSrc: string) => {
     window.open(imageSrc, '_blank');
@@ -46,53 +81,86 @@ const ResolverGallery = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-          {galleryImages.map((image, index) => (
-            <motion.div
-              key={index}
-              className="group relative aspect-square overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 cursor-pointer"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              onClick={() => handleImageClick(image)}
-            >
-              <img 
-                src={image} 
-                alt={`Projeto ${index + 1} - Resolver Elétrica`}
-                className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
-                loading="lazy"
+        <motion.div
+          className="relative max-w-4xl mx-auto"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <Carousel
+            setApi={setApi}
+            className="w-full"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {galleryImages.map((image, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-2">
+                    <div
+                      className="group relative aspect-square overflow-hidden rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 cursor-pointer"
+                      onClick={() => handleImageClick(image)}
+                    >
+                      <img 
+                        src={image} 
+                        alt={`Projeto ${index + 1} - Resolver Elétrica`}
+                        className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      
+                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                        <div className="text-center">
+                          <Eye className="h-8 w-8 text-white mx-auto mb-2" />
+                          <span className="text-white font-semibold text-sm">Ver Imagem</span>
+                        </div>
+                      </div>
+
+                      <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(image, '_blank');
+                          }}
+                          className="p-2 bg-green-500 hover:bg-green-600 text-white rounded-full transition-colors duration-300"
+                        >
+                          <Download className="h-4 w-4" />
+                        </button>
+                      </div>
+
+                      <div className="absolute bottom-2 left-2 right-2">
+                        <div className="bg-black/70 backdrop-blur-sm rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <span className="text-white text-xs font-medium">
+                            Projeto #{index + 1}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4 bg-white/10 border-white/20 text-white hover:bg-white/20" />
+            <CarouselNext className="right-4 bg-white/10 border-white/20 text-white hover:bg-white/20" />
+          </Carousel>
+
+          {/* Indicadores de posição */}
+          <div className="flex justify-center space-x-2 mt-6">
+            {Array.from({ length: Math.ceil(galleryImages.length / 3) }).map((_, index) => (
+              <button
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  Math.floor(current / 3) === index 
+                    ? 'bg-green-400 w-6' 
+                    : 'bg-white/30 hover:bg-white/50'
+                }`}
+                onClick={() => api?.scrollTo(index * 3)}
               />
-              
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                <div className="text-center">
-                  <Eye className="h-8 w-8 text-white mx-auto mb-2" />
-                  <span className="text-white font-semibold text-sm">Ver Imagem</span>
-                </div>
-              </div>
-
-              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    window.open(image, '_blank');
-                  }}
-                  className="p-2 bg-green-500 hover:bg-green-600 text-white rounded-full transition-colors duration-300"
-                >
-                  <Download className="h-4 w-4" />
-                </button>
-              </div>
-
-              <div className="absolute bottom-2 left-2 right-2">
-                <div className="bg-black/70 backdrop-blur-sm rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-xs font-medium">
-                    Projeto #{index + 1}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </motion.div>
 
         <motion.div
           className="text-center mt-12"
