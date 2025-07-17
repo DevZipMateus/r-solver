@@ -5,7 +5,7 @@ const ResolverTestimonials = () => {
   const testimonials = [
     {
       name: 'Felipe Papini',
-      location: 'Toledo-PR',
+      location: 'Cascavel-PR',
       text: 'Tive uma excelente experiência com a empresa. Desde o primeiro contato, fui muito bem atendido, com agilidade, clareza e profissionalismo. A equipe demonstrou conhecimento e compromisso em todas as etapas.',
       rating: 5,
       service: 'Atendimento Completo'
