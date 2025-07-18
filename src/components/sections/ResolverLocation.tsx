@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+
 const ResolverLocation = () => {
   return <section id="localizacao" className="py-16 lg:py-20" style={{
     backgroundColor: '#021b47'
@@ -38,7 +39,7 @@ const ResolverLocation = () => {
           once: true
         }} className="relative">
             <div className="w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-lg border border-white/20">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.123456789!2d-53.742839!3d-24.713889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQyJzUwLjAiUyA1M8KwNDQnMzQuMiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890" width="100%" height="100%" style={{
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.123456789!2d-53.742839!3d-24.713889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d0a0a0a0a0a0%3A0x0!2sR.%20Almerico%20%C3%82ngelo%20Sartori%2C%20649%20-%20S%C3%A3o%20Francisco%2C%20Toledo%20-%20PR%2C%2085915-215!5e0!3m2!1spt-BR!2sbr!4v1234567890" width="100%" height="100%" style={{
               border: 0
             }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Localização da Resolver - Toledo-PR"></iframe>
             </div>
@@ -64,8 +65,9 @@ const ResolverLocation = () => {
                   <MapPin className="h-5 w-5 text-orange-500 mt-1" />
                   <div>
                     <h4 className="font-medium text-white">Endereço</h4>
-                    <p className="text-gray-300">Rua Almerico Angelo Sartori, 649</p>
-                    <p className="text-gray-300">São Francisco, Toledo-PR</p>
+                    <p className="text-gray-300">R. Almerico Ângelo Sartori, 649</p>
+                    <p className="text-gray-300">São Francisco, Toledo - PR</p>
+                    <p className="text-gray-300">CEP: 85915-215</p>
                   </div>
                 </div>
 
@@ -119,4 +121,5 @@ const ResolverLocation = () => {
       </div>
     </section>;
 };
+
 export default ResolverLocation;
