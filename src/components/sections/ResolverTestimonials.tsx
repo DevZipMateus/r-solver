@@ -39,11 +39,11 @@ const ResolverTestimonials = () => {
       service: 'Elétrica Predial'
     },
     {
-      name: 'Danielly Correa',
+      name: 'Mayrun Sabadin',
       location: 'Toledo-PR',
-      text: 'Fui muito bem atendida desde o primeiro contato, a equipe é atenciosa e demonstra conhecimento e agilidade!',
+      text: 'Ótimo profissional, pontual, organizado e muito detalhista com o serviço executado.',
       rating: 5,
-      service: 'Atendimento Técnico'
+      service: 'Serviço Técnico'
     }
   ];
 
