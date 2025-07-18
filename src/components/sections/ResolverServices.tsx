@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -58,7 +59,8 @@ const ResolverServices = () => {
       icon: ShoppingCart,
       title: 'Venda de Materiais Elétricos',
       description: 'Fornecimento de materiais elétricos de qualidade com preços competitivos',
-      features: ['Marcas reconhecidas', 'Garantia de fábrica', 'Entrega rápida']
+      features: ['Marcas reconhecidas', 'Garantia de fábrica', 'Entrega rápida'],
+      image: '/lovable-uploads/38dd0d32-32fc-4e4e-97d1-3684047a7054.png'
     },
     {
       icon: Shield,
