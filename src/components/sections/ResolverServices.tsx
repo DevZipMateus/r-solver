@@ -46,7 +46,8 @@ const ResolverServices = () => {
       icon: Wifi,
       title: 'Instalação de Rede',
       description: 'Cabeamento estruturado e redes de dados para residências e empresas',
-      features: ['Cabeamento Cat6', 'Pontos de rede', 'WiFi profissional']
+      features: ['Cabeamento Cat6', 'Pontos de rede', 'WiFi profissional'],
+      image: '/lovable-uploads/ce85c620-c5fe-4740-9713-32c353456d14.png'
     },
     {
       icon: ShoppingCart,
