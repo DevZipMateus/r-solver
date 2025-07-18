@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -34,7 +35,8 @@ const ResolverServices = () => {
       icon: AlertTriangle,
       title: 'Instalação de Alarmes',
       description: 'Sistemas de alarme residencial e comercial para máxima segurança',
-      features: ['Sensores de movimento', 'Central de monitoramento', 'App móvel']
+      features: ['Sensores de movimento', 'Central de monitoramento', 'App móvel'],
+      image: '/lovable-uploads/64974ca3-fd5b-4310-84a7-63b8c930efa1.png'
     },
     {
       icon: Camera,
