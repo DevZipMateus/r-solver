@@ -72,7 +72,8 @@ const ResolverServices = () => {
       icon: Monitor,
       title: 'Sistemas de CFTV Completos',
       description: 'Venda e instalação de centrais e sistemas completos de CFTV',
-      features: ['Centrais profissionais', 'Armazenamento local/nuvem', 'Integração total']
+      features: ['Centrais profissionais', 'Armazenamento local/nuvem', 'Integração total'],
+      image: '/lovable-uploads/fab547c3-4cdb-45ab-ad44-de8cf8ece26c.png'
     }
   ];
 
