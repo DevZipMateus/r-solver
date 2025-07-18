@@ -1,9 +1,8 @@
-
 import { Instagram, Phone, Mail, MapPin } from 'lucide-react';
-
 const ResolverFooter = () => {
-  return (
-    <footer className="text-white relative overflow-hidden" style={{ backgroundColor: '#021b47' }}>
+  return <footer className="text-white relative overflow-hidden" style={{
+    backgroundColor: '#021b47'
+  }}>
       {/* Background gradient for better visual appeal */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-blue-800/30 to-black/50"></div>
       
@@ -13,11 +12,7 @@ const ResolverFooter = () => {
           <div className="sm:col-span-2 lg:col-span-2">
             <div className="relative inline-block mb-4 sm:mb-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 sm:p-4 shadow-2xl border border-white/20">
-                <img 
-                  src="/lovable-uploads/661a5537-04e5-47cc-8fff-c12fad4d94f2.png" 
-                  alt="Resolver - Soluções Elétricas Inteligentes" 
-                  className="h-10 sm:h-14 w-auto drop-shadow-2xl"
-                />
+                <img src="/lovable-uploads/661a5537-04e5-47cc-8fff-c12fad4d94f2.png" alt="Resolver - Soluções Elétricas Inteligentes" className="h-10 sm:h-14 w-auto drop-shadow-2xl" />
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-400/30 to-orange-600/30 rounded-xl blur-lg -z-10"></div>
               </div>
             </div>
@@ -26,13 +21,7 @@ const ResolverFooter = () => {
               em instalações residenciais e prediais, sistemas de segurança e automação.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://www.instagram.com/eletricaresolver"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-orange-500 transition-all duration-300 transform hover:scale-110 bg-white/5 p-2 rounded-lg hover:bg-orange-500/20"
-                aria-label="Instagram da Resolver"
-              >
+              <a href="https://www.instagram.com/eletricaresolver" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-500 transition-all duration-300 transform hover:scale-110 bg-white/5 p-2 rounded-lg hover:bg-orange-500/20" aria-label="Instagram da Resolver">
                 <Instagram className="h-5 w-5 sm:h-6 sm:w-6" />
               </a>
             </div>
@@ -82,13 +71,9 @@ const ResolverFooter = () => {
           <p className="text-gray-400 text-xs sm:text-sm">
             © {new Date().getFullYear()} Resolver - Soluções Elétricas Inteligentes. Todos os direitos reservados.
           </p>
-          <p className="text-gray-500 text-xs mt-1 sm:mt-2">
-            MEI: 56.219.926/0001-06 | Toledo-PR
-          </p>
+          
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default ResolverFooter;
