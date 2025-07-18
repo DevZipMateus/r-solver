@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -23,7 +22,8 @@ const ResolverServices = () => {
       title: 'Instalação Elétrica Residencial e Predial',
       description: 'Instalações elétricas completas em casas, apartamentos e empresas de acordo com projeto técnico',
       features: ['Projeto elétrico', 'Instalação conforme normas', 'Certificação e garantia'],
-      image: '/lovable-uploads/a79cb66d-2649-4a82-a99b-9f4e0c77f95f.png'
+      image: '/lovable-uploads/a79cb66d-2649-4a82-a99b-9f4e0c77f95f.png',
+      imagePosition: 'object-center'
     },
     {
       icon: Lightbulb,
