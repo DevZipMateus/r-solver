@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -40,7 +39,8 @@ const ResolverServices = () => {
       icon: Camera,
       title: 'Instalação de Câmeras',
       description: 'Sistemas de CFTV com câmeras de alta resolução e monitoramento remoto',
-      features: ['Câmeras HD/4K', 'Visão noturna', 'Acesso remoto']
+      features: ['Câmeras HD/4K', 'Visão noturna', 'Acesso remoto'],
+      image: '/lovable-uploads/0584aac3-8be0-4e68-88c5-c783ed2533a5.png'
     },
     {
       icon: Wifi,
@@ -97,7 +97,17 @@ const ResolverServices = () => {
               className="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 flex flex-col h-full"
             >
               <div className="flex-grow">
-                <service.icon className="h-8 w-8 sm:h-10 sm:w-10 text-orange-500 mb-3 sm:mb-4" />
+                {service.image ? (
+                  <div className="mb-3 sm:mb-4">
+                    <img 
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-32 sm:h-40 object-cover rounded-lg"
+                    />
+                  </div>
+                ) : (
+                  <service.icon className="h-8 w-8 sm:h-10 sm:w-10 text-orange-500 mb-3 sm:mb-4" />
+                )}
                 <h3 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 leading-tight">{service.title}</h3>
                 <p className="text-gray-300 mb-3 sm:mb-4 text-sm leading-relaxed">{service.description}</p>
                 
