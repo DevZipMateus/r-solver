@@ -36,7 +36,8 @@ const ResolverServices = () => {
       title: 'Instalação de Alarmes',
       description: 'Sistemas de alarme residencial e comercial para máxima segurança',
       features: ['Sensores de movimento', 'Central de monitoramento', 'App móvel'],
-      image: '/lovable-uploads/64974ca3-fd5b-4310-84a7-63b8c930efa1.png'
+      image: '/lovable-uploads/64974ca3-fd5b-4310-84a7-63b8c930efa1.png',
+      imagePosition: 'object-center object-top'
     },
     {
       icon: Camera,
@@ -106,7 +107,7 @@ const ResolverServices = () => {
                     <img 
                       src={service.image} 
                       alt={service.title}
-                      className="w-full h-32 sm:h-40 object-cover rounded-lg"
+                      className={`w-full h-36 sm:h-44 object-cover rounded-lg ${service.imagePosition || 'object-center'}`}
                     />
                   </div>
                 ) : (
