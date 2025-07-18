@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { 
   Zap, 
@@ -66,7 +65,8 @@ const ResolverServices = () => {
       icon: Shield,
       title: 'Venda de Alarmes',
       description: 'Comercialização de sistemas de alarme com instalação incluída',
-      features: ['Equipamentos modernos', 'Configuração personalizada', 'Suporte técnico']
+      features: ['Equipamentos modernos', 'Configuração personalizada', 'Suporte técnico'],
+      image: '/lovable-uploads/47461bbf-ea53-4240-9866-ec716e0fa1d9.png'
     },
     {
       icon: Monitor,
