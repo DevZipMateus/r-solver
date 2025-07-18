@@ -29,7 +29,8 @@ const ResolverServices = () => {
       icon: Lightbulb,
       title: 'Instalação de Iluminação LED',
       description: 'Modernização do seu sistema de iluminação com tecnologia LED eficiente',
-      features: ['Economia de energia', 'Maior durabilidade', 'Iluminação personalizada']
+      features: ['Economia de energia', 'Maior durabilidade', 'Iluminação personalizada'],
+      image: '/lovable-uploads/68b54e76-ec39-4f45-9659-90351af41748.png'
     },
     {
       icon: AlertTriangle,
