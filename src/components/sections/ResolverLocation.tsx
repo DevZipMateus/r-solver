@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Phone, Mail } from 'lucide-react';
 
@@ -106,10 +107,11 @@ const ResolverLocation = () => {
             <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl p-6 text-white">
               <h3 className="text-xl font-semibold mb-3">Área de Atendimento</h3>
               <p className="text-orange-100 mb-4">
-                Atendemos Toledo e região com serviços de qualidade e agilidade.
+                Atendemos Toledo e todas as cidades do Paraná com serviços de qualidade e agilidade.
               </p>
               <ul className="space-y-2 text-orange-100">
                 <li>• Toledo - PR</li>
+                <li>• Cascavel</li>
                 <li>• Marechal Cândido Rondon</li>
                 <li>• Assis Chateaubriand</li>
                 <li>• Nova Santa Rosa</li>
