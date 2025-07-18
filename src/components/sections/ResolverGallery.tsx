@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Eye } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -27,11 +26,8 @@ const ResolverGallery = () => {
     '/lovable-uploads/89783CA20A0402AC83AA627A1DD8B744.jpeg',
     '/lovable-uploads/82265DD1E84703CF2CB97B3F0851BA94.jpeg',
     '/lovable-uploads/5F1DCB4E1A627EEA506A316183B455B3.jpeg',
-    '/lovable-uploads/4D93EF68ECC2BE9153EA39B596FF2246.jpeg',
     '/lovable-uploads/28BE16FF03DA05FF599889DEEC168983.jpeg',
-    '/lovable-uploads/1FF6EB8893814B0B20D0CCABC7121604.jpeg',
     '/lovable-uploads/1F6F502BD2E5B1654BC6D30C8C62FBF7.jpeg',
-    '/lovable-uploads/0AD0EC5AA382C80DE34BC98B0ED0E96B.jpeg',
     '/lovable-uploads/019447C4AAF9369CCA2972A86B66BC66.jpeg'
   ];
 
