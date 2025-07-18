@@ -13,18 +13,18 @@ const ResolverInstagram = () => {
   const stats = [
     {
       icon: Eye,
-      label: 'Projetos Visualizados',
-      value: '500+'
+      label: 'Venha visualizar mais projetos',
+      value: ''
     },
     {
       icon: Users,
       label: 'Clientes Satisfeitos',
-      value: '200+'
+      value: ''
     },
     {
       icon: Instagram,
-      label: 'Posts Inspiradores',
-      value: '100+'
+      label: 'Posts de serviços executados',
+      value: ''
     }
   ];
 
@@ -117,7 +117,6 @@ const ResolverInstagram = () => {
                 className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-orange-500/30 text-center"
               >
                 <stat.icon className="h-8 w-8 text-orange-400 mx-auto mb-3" />
-                <h4 className="text-lg font-semibold text-white mb-1">{stat.value}</h4>
                 <p className="text-gray-300 text-sm">{stat.label}</p>
               </motion.div>
             ))}
